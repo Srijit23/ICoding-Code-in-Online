@@ -1,0 +1,39 @@
+{
+  "name": "airjava",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:server\"",
+    "dev:web": "vite --host 0.0.0.0",
+    "dev:server": "tsx watch server/src/index.ts",
+    "build": "tsc --noEmit && tsc -p server/tsconfig.json && vite build",
+    "start": "tsx server/src/index.ts",
+    "test": "tsx --test server/test/*.test.ts",
+    "typecheck": "tsc --noEmit && tsc -p server/tsconfig.json"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "concurrently": "^9.2.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.20.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.30",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
